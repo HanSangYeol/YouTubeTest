@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.youtube.player.YouTubePlayerView;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -38,6 +40,7 @@ public class MainActivity extends Activity {
     final String serverKey = "AIzaSyD-ie2ywfIybH6zkUAiFpTGvMrdLb_sTtQ"; //https://console.developers.google.com
     ArrayList<SearchData> sdata = new ArrayList<SearchData>();
     AsyncTask<?, ?, ?> searchTask;
+    private com.google.android.youtube.player.YouTubePlayerView youtubeplayer;
     private EditText eturl;
     private Button search;
     private ListView searchlist;
@@ -49,8 +52,7 @@ public class MainActivity extends Activity {
         this.searchlist = (ListView) findViewById(R.id.searchlist);
         this.search = (Button) findViewById(R.id.search);
         this.eturl = (EditText) findViewById(R.id.eturl);
-
-        eturl = (EditText) findViewById(R.id.eturl);
+        this.youtubeplayer = (YouTubePlayerView) findViewById(R.id.youtubeplayer);
 
         Button search = (Button) findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener() {
